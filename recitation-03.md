@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 03
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):**Rodrigo Rosas Guzman
+
 
 
 
@@ -111,7 +111,7 @@ following:
 a) Describe, in your own words, what the `combine` method is doing and
 what it returns.
 
-.  
+.  Combine takes two sorted lists and turns it into one sorted list. This new sorted list and starts counting the disagreements. 
 .  
 .  
 .  
@@ -124,7 +124,7 @@ what it returns.
 b) Write the work recurrence formula for `num_disagreements_fast`. Please explain how do you have this.
 
 .  
-.  
+.  W(n)=2W(n/2) + O(n)
 .  
 .  
 .  
@@ -135,7 +135,9 @@ c) Solve this recurrence using any method you like. Please explain how do you ha
 .  
 .  
 .  
-.  
+.  a = 2, b = 2, f(n) = O(n)
+
+o(nlogn)
 .  
 .  
 .  
@@ -152,7 +154,12 @@ done in parallel, write the span recurrence for your algorithm. Please explain h
 .  
 .  
 .  
-.  
+.  the two calls that are the same size merge. their values cap at s(n/2)
+
+the combine step is o(n)
+
+in conclusion s(1)=o(1)
+this is because since the lines are parallel, one of the two recursive calls is removed. 
 .  
 .  
 .  
@@ -166,8 +173,9 @@ e) Solve this recurrence using any method you like. Please explain how do you ha
 
 .  
 .  
+.  S(n)=S(n/2)+cn,S(1)=o(1)
 .  
-.  
+even though the calls run in paralell,the combine step at each level costs work, they add up.
 .  
 .  
 .  
@@ -181,4 +189,6 @@ f) If `ranks` is a list of size n, Netflix says it will give you
 lg(n) processors to run your algorithm in parallel. What is the
 upper bound on the runtime of this parallel implementation? (Hint: assume a Greedy
 Scheduler). Please explain how do you have this.
+
+with the p=logn processors, both the work term and the span become o(n), so the overall runtime is also o(n)
 
